@@ -1,26 +1,16 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-
-export type Status = 'pending' | 'active' | 'rejected' | 'completed';
+export type Status = 'none' | 'pending' | 'active' | 'rejected' | 'completed';
 export type AvatarStyle = {
   skin: string; hair: string; hairColor: string; face: string;
   outfit: string; glasses: boolean; accessory: string; expression: string;
 };
 export type DemoState = {
+  id:string; name:string; email:string; assignedDoctor:string; onboardingComplete:boolean;
   language: string; avatar: string; symptom: string; analyzed: boolean; learningArea:string; followup: string;
   questStatus: Status; questTitle: string; questMinutes: string; questNote: string;
-  carePlan: string; followUp: string; avatarStyle: AvatarStyle; xp: number; streak: number; recoveryTokens: number; brain: number; heart: number; lungUnlocked: boolean; notification: string;
+  carePlan: string; followUp: string; avatarStyle: AvatarStyle; xp: number; streak: number; recoveryTokens: number;
+  brain:number; heart:number; lung:number; bone:number; muscle:number; cultural:number; lungUnlocked:boolean;
+  questsCompleted:number; badges:string[]; notification:string;
 };
-const initial: DemoState = { language:'Telugu',avatar:'Mango',symptom:'Cough and sore throat',analyzed:false,learningArea:'Lung Valley',followup:'',questStatus:'pending',questTitle:'A gentle 10-minute walk',questMinutes:'10',questNote:'Move at a comfortable pace and stop if you feel unwell.',carePlan:'Rest, drink fluids, and monitor how you feel. Contact Dr. Maya if symptoms worsen or do not improve.',followUp:'Check back in 3 days.',avatarStyle:{skin:'#bd7957',hair:'wavy',hairColor:'#49372f',face:'round',outfit:'sage',glasses:false,accessory:'flower',expression:'happy'},xp:420,streak:5,recoveryTokens:0,brain:100,heart:18,lungUnlocked:false,notification:'' };
-type ContextValue = { state:DemoState; update:(patch:Partial<DemoState>)=>void; reset:()=>void };
-const DemoContext = createContext<ContextValue | null>(null);
-export function DemoProvider({children}:{children:ReactNode}) {
-  const [state,setState]=useState<DemoState>(()=>{try{const saved=localStorage.getItem('hitabloom-demo');if(!saved)return initial;const parsed=JSON.parse(saved);return {...initial,...parsed,avatarStyle:{...initial.avatarStyle,...parsed.avatarStyle}}}catch{return initial}});
-  useEffect(()=>{localStorage.setItem('hitabloom-demo',JSON.stringify(state))},[state]);
-  const update=(patch:Partial<DemoState>)=>setState(s=>({...s,...patch,...(patch.notification?.startsWith('Dr. Maya sent you a Recovery Token')?{streak:Math.max(s.streak,patch.streak??0)}:{})}));
-  const reset=()=>setState(initial);
-  return <DemoContext.Provider value={{state,update,reset}}>{children}</DemoContext.Provider>;
-}
-export function useDemo(){const value=useContext(DemoContext);if(!value)throw new Error('DemoProvider missing');return value}
 export const languages=['English','Hindi','Telugu','Greek','Yoruba'];
 export function mapSymptomToArea(text:string){const t=text.toLowerCase();if(/head|memory|focus|brain|think|sleep/.test(t))return 'Brain Garden';if(/heart|chest|pulse|heartbeat/.test(t))return 'Heart Garden';if(/muscle|strain|soreness|sore after walking/.test(t))return 'Muscle Meadow';if(/joint|bone|knee|back/.test(t))return 'Bone Mountains';return 'Lung Valley'}
 export const careExplanations:Record<string,string>={
@@ -43,3 +33,5 @@ export const characterChatSubtitle='People cough for many reasons. It can help c
 export const genericCharacterChatReply:Record<string,string>={English:'Body systems have many connected roles. What someone notices can have different explanations, so Dr. Maya is the right person to discuss your own symptoms.',Hindi:'शरीर के अंग आपस में मिलकर काम करते हैं। लक्षणों के कई कारण हो सकते हैं, इसलिए अपने लक्षणों के बारे में डॉ. माया से बात करें।',Telugu:'శరీరంలోని వ్యవస్థలు అనుసంధానమై పనిచేస్తాయి. లక్షణాలకు వేర్వేరు కారణాలు ఉండవచ్చు; మీ లక్షణాల గురించి డా. మాయాతో మాట్లాడండి.',Greek:'Τα συστήματα του σώματος συνεργάζονται και τα συμπτώματα μπορεί να έχουν διαφορετικές εξηγήσεις. Μιλήστε με τη Δρ. Μάγια για τα δικά σας.',Yoruba:'Àwọn ètò ara ń ṣiṣẹ́ papọ̀, àwọn àmì àìsàn sì lè ní onírúurú ìdí. Bá Dókítà Maya sọ̀rọ̀ nípa tìrẹ.'};
 export const genericCharacterChatSubtitle='Body systems work together. Personal symptoms can have different explanations; ask your clinician.';
 export const areas=[{name:'Brain Garden',icon:'brain',progress:100,unlocked:true},{name:'Heart Garden',icon:'heart',progress:18,unlocked:true},{name:'Lung Valley',icon:'wind',progress:0,unlocked:false},{name:'Bone Mountains',icon:'bone',progress:0,unlocked:false},{name:'Muscle Meadow',icon:'activity',progress:0,unlocked:false},{name:'Cultural Garden',icon:'flower',progress:36,unlocked:true}];
+export { DemoProvider, demoAccounts, useDemo } from './store';
+export type { DemoContextValue, DemoMessage, DemoRole, DemoSession } from './store';

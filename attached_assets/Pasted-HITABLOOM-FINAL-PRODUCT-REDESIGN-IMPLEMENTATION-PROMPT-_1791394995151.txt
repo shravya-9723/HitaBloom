@@ -1,0 +1,1438 @@
+HITABLOOM — FINAL PRODUCT REDESIGN / IMPLEMENTATION PROMPT
+
+IMPORTANT:
+You are modifying the EXISTING HitaBloom Replit project.
+
+DO NOT create a separate new application.
+DO NOT throw away working functionality.
+DO NOT replace the current project with a generic healthcare dashboard.
+
+The attached image named "HitaBloom Healthcare App Flow Mockup" is the PRIMARY visual and UX reference.
+
+Recreate the overall visual language, screen hierarchy, glassmorphic UI, colorful fantasy health world, characters, navigation, and journey shown in the reference image.
+
+The image is a visual reference, not a source of copyrighted assets. Create original UI/illustrations/assets inspired by the reference.
+
+==================================================
+1. PRODUCT IDENTITY
+==================================================
+
+Product name:
+HitaBloom
+
+Tagline:
+"A Healthier You, A Brighter World"
+
+HitaBloom is a gamified, multilingual health education and care-engagement platform.
+
+It combines:
+
+🌸 A magical illustrated health world
+🧑‍🎤 Personalized patient avatars
+🩺 A doctor/admin character
+🤖 AI educational characters
+🌍 Cultural wellness knowledge
+🎯 Doctor-approved health quests
+🔥 Streaks
+⭐ XP
+🌱 Recovery Tokens
+🌸 Garden progression
+
+It should feel like:
+
+- a beautiful adventure game
+- a personalized health journey
+- a friendly AI companion
+- a doctor-supervised experience
+
+It must NOT feel like:
+
+- hospital management software
+- a boring medical dashboard
+- a generic chatbot
+- a form-heavy healthcare website
+
+==================================================
+2. VISUAL DESIGN — VERY IMPORTANT
+==================================================
+
+Use the attached mockup as the PRIMARY visual reference.
+
+Use a polished GLASSMORPHIC design system:
+
+- translucent glass cards
+- backdrop blur
+- soft borders
+- subtle shadows
+- rounded corners
+- pastel gradients
+- glowing accents
+- deep navy/indigo backgrounds where appropriate
+- soft pink, purple, cyan, green and blue accents
+- botanical elements
+- flowers
+- fantasy landscapes
+- colorful character illustrations
+- subtle animations
+
+The UI should feel premium, playful and magical.
+
+Do NOT make every screen white.
+
+Use rich illustrated backgrounds on major patient screens.
+
+Use glass cards floating over the background.
+
+Typography should be friendly and highly readable.
+
+Buttons should have subtle glow/gradient effects.
+
+Use smooth page transitions.
+
+==================================================
+3. MAIN USER ROLES
+==================================================
+
+There are TWO roles:
+
+1. PATIENT
+2. DR. MAYA — DOCTOR + ADMIN
+
+IMPORTANT:
+
+For the hackathon demo, Dr. Maya is the central doctor and administrator.
+
+Every demo patient is assigned to Dr. Maya.
+
+Dr. Maya can see ALL demo patient records.
+
+Patients cannot see other patients.
+
+Patients only see their own health journey.
+
+==================================================
+4. LOGIN SYSTEM
+==================================================
+
+Create a beautiful GLASSMORPHIC LOGIN SCREEN.
+
+Screen title:
+
+"Welcome Back"
+
+Subtitle:
+
+"Continue your HitaBloom journey"
+
+Tabs:
+
+[ Patient ] [ Doctor ]
+
+Patient login:
+Email
+Password
+
+Doctor login:
+Email
+Password
+
+Buttons:
+
+Login
+
+Continue with Google
+Continue with Apple
+
+Also:
+
+"Don't have an account? Sign up"
+
+For the hackathon, authentication can be MOCK authentication.
+
+Do NOT spend time implementing production authentication.
+
+Create demo accounts.
+
+PATIENT DEMO ACCOUNTS:
+
+Aarav
+aarav@hitabloom.demo
+
+Priya
+priya@hitabloom.demo
+
+Kofi
+kofi@hitabloom.demo
+
+Elena
+elena@hitabloom.demo
+
+DOCTOR:
+
+Dr. Maya
+drmaya@hitabloom.demo
+
+The app can use browser/local state for the demo.
+
+==================================================
+5. LANDING PAGE
+==================================================
+
+Create a beautiful HitaBloom landing page.
+
+Hero:
+
+HitaBloom
+
+"A Healthier You, A Brighter World"
+
+Supporting text:
+
+"Turn everyday health guidance into a journey you can understand, follow and grow through."
+
+Primary button:
+
+🌸 Start Your Journey
+
+Secondary button:
+
+🩺 I'm a Doctor
+
+Show friendly original character illustrations in the hero.
+
+Include:
+
+Multilingual AI Characters
+Doctor Oversight
+Cultural Wellness
+Interactive Health Quests
+
+Safety statement:
+
+"HitaBloom supports health education and communication with your care team. It does not diagnose, prescribe, change medication instructions, or replace medical care."
+
+==================================================
+6. PATIENT ONBOARDING
+==================================================
+
+After selecting Start Your Journey:
+
+STEP 1 — Language
+
+"How would you like HitaBloom to speak with you?"
+
+Languages:
+
+🇬🇧 English
+🇮🇳 Hindi
+🇮🇳 Telugu
+🇬🇷 Greek
+🌍 Yoruba
+
+The selected language is saved.
+
+Character dialogue and AI explanations use the selected language.
+
+English subtitles MUST remain visible for character dialogue.
+
+The language can be changed later from the header.
+
+--------------------------------------------------
+
+STEP 2 — PATIENT AVATAR
+
+Create a customizable Bitmoji-style ORIGINAL patient avatar.
+
+Do NOT use Snapchat branding or proprietary assets.
+
+Allow:
+
+Skin tone
+Hair
+Hair color
+Face
+Outfit
+Accessories
+Glasses
+Expression
+
+Example demo patient:
+
+Aarav
+
+The avatar appears throughout the application.
+
+Use the avatar in:
+
+Patient World
+Profile
+Quest completion
+Streak celebration
+Character conversations
+Progress screens
+
+==================================================
+7. HITABLOOM WORLD — MAIN PATIENT HOME
+==================================================
+
+THIS IS THE MOST IMPORTANT SCREEN.
+
+The Patient World must be the central home experience.
+
+It should visually resemble the attached mockup.
+
+Create a large illustrated 2D fantasy health world.
+
+NOT a geographic map.
+
+NOT a 3D game.
+
+NOT a generic dashboard.
+
+The world must visibly contain:
+
+🧠 Brain Garden
+❤️ Heart Garden
+🫁 Lung Valley
+🦴 Bone Mountains
+💪 Muscle Meadow
+🌿 Cultural Garden
+
+Each area has:
+
+- unique visual environment
+- illustration
+- progress
+- locked/unlocked/completed state
+- flowers/plants
+- subtle animation
+- character
+- path to the next area
+
+Example demo state:
+
+🧠 Brain Garden
+100% Bloomed
+Completed
+
+❤️ Heart Garden
+18%
+Unlocked
+
+🫁 Lung Valley
+0%
+Locked
+
+🦴 Bone Mountains
+0%
+Locked
+
+💪 Muscle Meadow
+0%
+Locked
+
+🌿 Cultural Garden
+Unlocked
+
+Top header:
+
+HitaBloom World
+
+Language selector
+
+Notifications
+
+Patient avatar
+
+Patient name
+
+Level
+
+Stats:
+
+🔥 5 Day Streak
+⭐ 320 XP
+
+Bottom navigation:
+
+Home
+Progress
+Quests
+Messages
+Profile
+
+Floating CTA:
+
+💬 Tell HitaBloom What You're Feeling
+
+==================================================
+8. BODY CHARACTERS
+==================================================
+
+Create ORIGINAL friendly animated/cartoon-style characters.
+
+The characters must be visually distinct and reusable throughout the application.
+
+CHARACTERS:
+
+🧠 Bri — Brain
+❤️ Cora — Heart
+🫁 Luma — Lungs
+🦴 Bony — Bones
+💪 Milo — Muscles
+
+Each character needs:
+
+- original illustration
+- name
+- personality
+- body-system identity
+- speech bubble
+- dialogue
+- video placeholder
+- English subtitles
+- selected-language dialogue
+- follow-up question input
+
+IMPORTANT:
+
+Do not use generic icons as the characters.
+
+Use actual friendly character illustrations.
+
+The characters should feel like the colorful characters shown in the attached mockup.
+
+Create the architecture so real AI-generated talking videos can later replace the static illustrations.
+
+Use:
+
+CharacterVideo component
+
+with:
+
+characterImage
+videoUrl
+posterImage
+dialogue
+subtitle
+language
+
+If videoUrl is missing, display the character illustration with subtle animation.
+
+==================================================
+9. HOW TO GET THE CHARACTER ASSETS
+==================================================
+
+Create the UI and character slots so that image/video assets can easily be replaced later.
+
+Use an assets structure like:
+
+/public/assets/characters/
+
+brain.png
+heart.png
+lungs.png
+bones.png
+muscles.png
+dr-maya.png
+cultural-guide.png
+
+And optionally:
+
+brain.mp4
+heart.mp4
+lungs.mp4
+bones.mp4
+muscles.mp4
+
+DO NOT hardcode assets directly inside components.
+
+Use a centralized character configuration.
+
+Example:
+
+characters.ts
+
+brain:
+name: Bri
+image: ...
+videoUrl: ...
+
+heart:
+name: Cora
+image: ...
+videoUrl: ...
+
+lungs:
+name: Luma
+image: ...
+videoUrl: ...
+
+etc.
+
+==================================================
+10. DOCTOR CHARACTER
+==================================================
+
+Dr. Maya must also have a personalized character/avatar.
+
+Create:
+
+Dr. Maya
+
+Doctor + Admin
+
+Her avatar appears:
+
+Doctor dashboard
+Patient care plan
+Quest approval
+Recovery Token
+Patient messages
+Doctor profile
+
+When Dr. Maya approves a quest:
+
+"🩺 Dr. Maya approved your quest"
+
+When she sends a Recovery Token:
+
+"🌱 Dr. Maya sent you a Recovery Token"
+
+This makes the doctor feel like an actual person in the patient's journey.
+
+==================================================
+11. SYMPTOM INPUT
+==================================================
+
+The symptom input must NOT be prefilled.
+
+The example:
+
+"I have a sore throat and mild cough."
+
+is ONLY an example.
+
+It must NEVER become the patient's default condition.
+
+Screen:
+
+"Tell HitaBloom what you're feeling"
+
+Input:
+
+"Describe your symptom or question in your own words..."
+
+Example suggestions:
+
+"I've been feeling tired lately."
+
+"Why does my head hurt?"
+
+"I want to understand how my heart works."
+
+Patient chooses what to enter.
+
+==================================================
+12. AI BODY-AREA UNDERSTANDING
+==================================================
+
+After the patient submits their actual text:
+
+Show:
+
+"Understanding what you shared..."
+
+Then identify the relevant educational area.
+
+Possible areas:
+
+Brain
+Heart
+Lungs
+Bones
+Muscles
+
+IMPORTANT:
+
+This is educational classification.
+
+It is NOT diagnosis.
+
+Example:
+
+Patient enters:
+
+"I have a sore throat and mild cough."
+
+AI result:
+
+"Your question relates to Lung Valley."
+
+Show safety text:
+
+"This is educational information, not a diagnosis."
+
+==================================================
+13. CHARACTER JOURNEY
+==================================================
+
+After body-area matching:
+
+Show the relevant character.
+
+Example:
+
+Luma — Lungs
+
+"Hi Aarav! I'm Luma."
+
+Luma explains:
+
+- what the body system normally does
+- how the symptom/topic may generally relate
+- what someone might notice
+- general wellbeing information
+- when professional medical care may be important
+
+The patient can ask:
+
+"Why do people cough?"
+
+"What do lungs do?"
+
+"How does breathing work?"
+
+The character responds with safe educational information.
+
+==================================================
+14. CULTURAL WELLNESS
+==================================================
+
+Cultural Wellness must be contextual.
+
+It must depend on the patient's symptom/topic.
+
+Do NOT show a generic static wellness page.
+
+Show:
+
+🌿 Cultural Wellness Knowledge
+
+Tabs:
+
+Tradition
+Evidence
+Safety
+
+Each curated entry contains:
+
+Culture
+Traditional context
+Traditional use
+Modern evidence
+Safety notes
+
+IMPORTANT:
+
+Never invent traditions.
+
+Never claim traditional practices cure disease.
+
+Clearly distinguish:
+
+Traditional knowledge
+
+from
+
+Modern medical evidence.
+
+If no curated entry exists:
+
+"No curated cultural wellness information is available for this topic."
+
+Do NOT hallucinate cultural practices.
+
+==================================================
+15. DR. MAYA CARE PLAN
+==================================================
+
+The doctor is authoritative.
+
+Create:
+
+🩺 Dr. Maya's Care Plan
+
+Patient-specific instructions.
+
+Example:
+
+Rest and stay hydrated.
+Use warm fluids.
+Monitor symptoms.
+Seek in-person care if symptoms worsen or persist.
+
+The doctor's original instructions remain visible.
+
+AI can explain or translate them.
+
+AI cannot:
+
+- change them
+- add medication
+- change dosage
+- remove instructions
+- contradict Dr. Maya
+- independently prescribe
+
+==================================================
+16. AI CARE EXPLANATION
+==================================================
+
+Button:
+
+"Explain this in Telugu"
+
+(or selected language)
+
+AI explains Dr. Maya's instructions in the selected language.
+
+Clearly label:
+
+"AI explanation of Dr. Maya's instructions"
+
+The original doctor's instructions remain visible.
+
+==================================================
+17. AI QUEST SUGGESTION
+==================================================
+
+AI creates an engagement-focused quest based on:
+
+Patient context
+Doctor care instructions
+Current garden
+Previous progress
+Current streak
+
+Example:
+
+🎯 Breathe Easy Challenge
+
+"Drink warm fluids 3 times today."
+
+Reward:
+
+⭐ +50 XP
+🔥 +1 Streak Day
+
+IMPORTANT:
+
+AI only SUGGESTS.
+
+The quest is NOT active yet.
+
+Show:
+
+"Send to Dr. Maya for Approval"
+
+==================================================
+18. DR. MAYA ADMIN DASHBOARD
+==================================================
+
+Dr. Maya is the central ADMIN.
+
+Create a polished glassmorphic admin dashboard.
+
+Header:
+
+HitaBloom Admin
+
+Dr. Maya
+Doctor
+
+Stats:
+
+Total Patients
+Active Journeys
+Pending Quest Approvals
+Recovery Tokens
+
+Navigation:
+
+Dashboard
+Patients
+Quests
+Messages
+Recovery Tokens
+Profile
+
+==================================================
+19. ALL PATIENT RECORDS
+==================================================
+
+Dr. Maya can see ALL demo patients.
+
+Patient table/cards:
+
+Aarav
+Priya
+Kofi
+Elena
+
+Each patient card shows:
+
+Avatar
+Name
+Current health area
+Progress
+XP
+Streak
+Quest status
+
+Example:
+
+Aarav
+❤️ Heart Garden
+🔥 6 Day Streak
+⭐ 370 XP
+18%
+
+Priya
+🧠 Brain Garden
+🔥 12 Day Streak
+⭐ 820 XP
+100%
+
+Kofi
+🫁 Lung Valley
+🔥 3 Day Streak
+⭐ 240 XP
+60%
+
+Elena
+🌿 Cultural Garden
+🔥 1 Day Streak
+⭐ 80 XP
+20%
+
+Dr. Maya can click a patient to open their complete record.
+
+==================================================
+20. PATIENT RECORD
+==================================================
+
+Dr. Maya should be able to see:
+
+Patient profile
+Avatar
+Language
+Symptoms/topics shared
+Educational areas
+Current garden
+Progress
+Streak
+XP
+Completed quests
+Pending quests
+Care instructions
+Messages
+Recovery token history
+
+Dr. Maya can update patient care instructions.
+
+==================================================
+21. QUEST APPROVAL
+==================================================
+
+Doctor sees:
+
+AI Suggested Quest
+
+"10-minute gentle walk"
+
+Context:
+
+"Suggested based on the patient's current care journey."
+
+Buttons:
+
+Edit
+Approve
+Reject
+
+Only after clicking APPROVE does the quest become active for the patient.
+
+==================================================
+22. PATIENT QUEST
+==================================================
+
+Patient sees:
+
+🎯 Today's Quest
+
+Quest description
+
+⭐ +50 XP
+
+🔥 +1 Streak
+
+Button:
+
+"Complete Quest"
+
+After completion:
+
+🎉 Quest Complete!
+
++50 XP
+
+🔥 Streak increased
+
+Character celebrates.
+
+Patient avatar celebrates.
+
+Flowers bloom.
+
+==================================================
+23. GARDEN PROGRESSION
+==================================================
+
+Completing quests increases the current garden's progress.
+
+Example:
+
+Heart Garden:
+
+18%
+→ 40%
+→ 70%
+→ 100%
+
+At 100%:
+
+🌸 Heart Garden Bloomed!
+
+Then:
+
+🫁 Lung Valley Unlocked!
+
+Show a beautiful unlock animation.
+
+Return the patient to the World.
+
+The world should visibly change.
+
+==================================================
+24. STREAK SYSTEM
+==================================================
+
+Show:
+
+🔥 Current Streak
+
+⭐ XP
+
+🏆 Badges
+
+Example:
+
+🔥 6 Day Streak
+⭐ 370 XP
+
+Badges:
+
+🌱 First Bloom
+🔥 3-Day Streak
+🌸 Garden Keeper
+🌍 Cultural Explorer
+
+Make this emotionally engaging.
+
+Never use guilt or punishment for missed quests.
+
+==================================================
+25. RECOVERY TOKEN
+==================================================
+
+If a patient misses a quest:
+
+Dr. Maya sees:
+
+"Aarav missed yesterday's quest."
+
+Button:
+
+🌱 Send Recovery Token
+
+After sending:
+
+Patient receives:
+
+"🌱 Dr. Maya sent you a Recovery Token."
+
+Message:
+
+"Everyone misses a day. Let's keep growing."
+
+The demo restores the patient's streak.
+
+This is supportive, not punitive.
+
+==================================================
+26. PATIENT MESSAGES
+==================================================
+
+Create a simple messaging area.
+
+Patient can receive:
+
+Dr. Maya updates
+Quest approval notifications
+Recovery Token messages
+Care plan updates
+
+Doctor can send supportive messages.
+
+==================================================
+27. PATIENT PROGRESS SCREEN
+==================================================
+
+Show:
+
+Patient avatar
+
+🔥 Streak
+⭐ XP
+🏆 Badges
+
+Garden progress:
+
+Brain Garden
+Heart Garden
+Lung Valley
+Bone Mountains
+Muscle Meadow
+Cultural Garden
+
+Use beautiful progress bars and illustrations.
+
+==================================================
+28. PROFILE
+==================================================
+
+Patient profile:
+
+Avatar
+Name
+Language
+Doctor:
+Dr. Maya
+
+Current streak
+XP
+Badges
+
+Allow:
+
+Change avatar
+Change language
+View doctor
+View achievements
+
+==================================================
+29. MULTILINGUAL SUPPORT
+==================================================
+
+Languages:
+
+English
+Hindi
+Telugu
+Greek
+Yoruba
+
+Selected language affects:
+
+UI where possible
+Character dialogue
+AI explanations
+Doctor instruction explanations
+
+English subtitles MUST always remain visible on character dialogue/video.
+
+==================================================
+30. AI SAFETY
+==================================================
+
+HitaBloom AI is an educational and communication layer.
+
+It does NOT:
+
+Diagnose
+Prescribe
+Change medication
+Change dosage
+Override Dr. Maya
+Replace professional care
+
+Use deterministic seeded responses for the hackathon if no live LLM API is configured.
+
+Create service functions:
+
+analyzeSymptom()
+generateBodyExplanation()
+answerCharacterQuestion()
+generateCulturalContext()
+explainDoctorInstructions()
+suggestQuest()
+translateContent()
+
+Keep AI logic separate from UI.
+
+==================================================
+31. DATA MODEL
+==================================================
+
+Create models:
+
+User
+Patient
+Doctor
+Avatar
+SymptomTopic
+Character
+CarePlan
+CulturalWellness
+Quest
+QuestApproval
+Streak
+XP
+Garden
+RecoveryToken
+Message
+Badge
+
+Use seeded demo data.
+
+Persist demo state using localStorage or the existing project data layer.
+
+==================================================
+32. DEMO PATIENT DATA
+==================================================
+
+Create:
+
+Aarav
+Priya
+Kofi
+Elena
+
+All assigned to:
+
+Dr. Maya
+
+Aarav should be the primary demo patient.
+
+Example:
+
+Aarav
+Language: Telugu
+Streak: 5 days
+XP: 320
+Brain Garden: 100%
+Heart Garden: 18%
+Lung Valley: Locked
+Bone Mountains: Locked
+Muscle Meadow: Locked
+Cultural Garden: Unlocked
+
+IMPORTANT:
+
+Do NOT make Aarav permanently have a sore throat.
+
+The symptom should be entered by the patient during the demo.
+
+==================================================
+33. DEMO DR. MAYA
+==================================================
+
+Dr. Maya:
+
+Role:
+Doctor + Admin
+
+Patients:
+Aarav
+Priya
+Kofi
+Elena
+
+She can:
+
+View all patients
+View patient records
+Create care plans
+Edit care plans
+Approve quests
+Reject quests
+Edit quests
+Send Recovery Tokens
+Send messages
+View progress
+
+==================================================
+34. NAVIGATION
+==================================================
+
+PATIENT:
+
+Home
+Progress
+Quests
+Messages
+Profile
+
+DOCTOR:
+
+Dashboard
+Patients
+Quest Approvals
+Messages
+Recovery Tokens
+Profile
+
+Use glassmorphic bottom navigation or side navigation depending on screen size.
+
+==================================================
+35. RESPONSIVE DESIGN
+==================================================
+
+Desktop-first for hackathon presentation.
+
+Also support mobile/tablet.
+
+The Patient World must remain visually impressive.
+
+==================================================
+36. CHARACTER ASSET SYSTEM
+==================================================
+
+Create reusable character asset slots.
+
+Characters:
+
+Bri
+Cora
+Luma
+Bony
+Milo
+Dr. Maya
+Cultural Guide
+
+Use high-quality original cartoon/fantasy character illustrations.
+
+If actual character images are not available yet, create polished placeholder illustrations/gradients while keeping the exact component structure.
+
+DO NOT use emoji as the final character artwork.
+
+DO NOT repeatedly generate random characters.
+
+Each character should have a fixed visual identity.
+
+==================================================
+37. VIDEO SUPPORT
+==================================================
+
+Create reusable CharacterVideo.
+
+It must support:
+
+Static character image
+Video URL
+Poster
+Dialogue
+English subtitles
+Selected language
+Play
+Pause
+Replay
+
+If no video exists:
+
+Show animated character illustration.
+
+Later we will add AI-generated talking videos.
+
+Do not make the application depend on video files.
+
+==================================================
+38. EXACT HACKATHON DEMO
+==================================================
+
+The judge should be able to experience:
+
+LANDING
+↓
+LOGIN
+↓
+PATIENT
+↓
+LANGUAGE
+↓
+AVATAR
+↓
+HITABLOOM WORLD
+↓
+TELL HITABLOOM WHAT YOU'RE FEELING
+↓
+PATIENT ENTERS A REAL SYMPTOM
+↓
+AI EDUCATIONAL AREA MATCH
+↓
+BODY CHARACTER
+↓
+FOLLOW-UP QUESTION
+↓
+CULTURAL WELLNESS
+↓
+DR. MAYA CARE PLAN
+↓
+AI EXPLANATION
+↓
+AI QUEST SUGGESTION
+↓
+DR. MAYA ADMIN DASHBOARD
+↓
+DR. MAYA APPROVES QUEST
+↓
+PATIENT RECEIVES QUEST
+↓
+PATIENT COMPLETES QUEST
+↓
++50 XP
+↓
+STREAK INCREASES
+↓
+GARDEN BLOOMS
+↓
+NEXT AREA UNLOCKS
+↓
+BACK TO HITABLOOM WORLD
+
+==================================================
+39. IMPORTANT: DO NOT MISINTERPRET THE EXAMPLE
+==================================================
+
+"I have a sore throat and mild cough."
+
+is ONLY an example.
+
+It is NOT default patient data.
+
+The symptom input must be empty.
+
+The patient must decide what to enter.
+
+==================================================
+40. FINAL VISUAL REQUIREMENT
+==================================================
+
+The attached HitaBloom mockup is the visual target.
+
+The final application should visually resemble the mockup in:
+
+- glassmorphism
+- colorful illustrated backgrounds
+- rounded translucent cards
+- fantasy world
+- character presentation
+- patient avatar
+- doctor avatar
+- login
+- language selection
+- world screen
+- symptom screen
+- cultural wellness
+- doctor care plan
+- quest approval
+- progress
+- admin dashboard
+
+Do NOT simplify this into plain white cards.
+
+==================================================
+41. IMPLEMENTATION PRIORITY
+==================================================
+
+Priority 1:
+Patient World
+
+Priority 2:
+Login + Patient/Doctor role separation
+
+Priority 3:
+Dr. Maya Admin Dashboard + all patient records
+
+Priority 4:
+Patient symptom → body character flow
+
+Priority 5:
+Cultural Wellness
+
+Priority 6:
+Doctor care plan
+
+Priority 7:
+Quest approval
+
+Priority 8:
+XP + streak + blooming
+
+Priority 9:
+Character assets
+
+Priority 10:
+Video integration
+
+Do not waste time on enterprise authentication, payment systems, complicated infrastructure or unnecessary backend features.
+
+==================================================
+42. BEFORE CODING
+==================================================
+
+FIRST inspect the existing HitaBloom Replit project.
+
+Identify:
+
+- current routes
+- current components
+- current data
+- existing Patient World
+- existing doctor dashboard
+- existing character implementation
+- existing state management
+- existing styling
+
+Then MODIFY the existing project.
+
+Preserve working functionality where possible.
+
+Do not rebuild blindly.
+
+After implementation, test all major navigation paths and make sure there are no dead buttons.
+
+The final product must feel like:
+
+🌸 HitaBloom
+🧑‍🎤 My avatar
+🩺 My doctor
+🌍 My health world
+🤖 My AI characters
+🎯 My quests
+🔥 My streak
+⭐ My XP
+🌱 My progress
+
+—not a generic healthcare website.
