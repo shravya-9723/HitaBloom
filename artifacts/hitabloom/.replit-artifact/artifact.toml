@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "HitaBloom"
+description = "A multilingual, doctor-supervised health journey where patients learn through friendly body characters, cultural wellness, approved quests, and a blooming illustrated world."
+version = "1.0.0"
+id = "artifacts/hitabloom"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23485
+
+[services.development]
+run = "pnpm --filter @workspace/hitabloom run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hitabloom", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/hitabloom/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23485"
+BASE_PATH = "/"
