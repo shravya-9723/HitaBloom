@@ -5,12 +5,11 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Redirect, Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
-import { DemoProvider } from './data';
-import { useDemo, type DemoRole } from './data';
+import { DemoProvider, useDemo, type DemoRole } from './data';
 import {
   Landing, Login, SignUp, Onboarding, Journey, CharacterPage, Cultural, Care, Quests, World, Progress,
   Messages, Profile, Doctor, DoctorPatients, PatientRecord, DoctorQuests, DoctorMessages, DoctorTokens, DoctorProfile,
-} from './pages';
+} from './screens';
 
 const queryClient = new QueryClient();
 function RoutedErrorBoundary({ children }: { children: ReactNode }) {

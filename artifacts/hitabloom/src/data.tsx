@@ -12,7 +12,7 @@ export type DemoState = {
   questsCompleted:number; badges:string[]; notification:string;
 };
 export const languages=['English','Hindi','Telugu','Greek','Yoruba'];
-export function mapSymptomToArea(text:string){const t=text.toLowerCase();if(/head|memory|focus|brain|think|sleep/.test(t))return 'Brain Garden';if(/heart|chest|pulse|heartbeat/.test(t))return 'Heart Garden';if(/muscle|strain|soreness|sore after walking/.test(t))return 'Muscle Meadow';if(/joint|bone|knee|back/.test(t))return 'Bone Mountains';return 'Lung Valley'}
+export function mapSymptomToArea(text:string){const t=text.toLowerCase();if(/head|memory|focus|brain|think|sleep/.test(t))return 'Brain Garden';if(/heart|chest|pulse|heartbeat/.test(t))return 'Heart Garden';if(/muscle|strain|soreness|sore after walking/.test(t))return 'Muscle Meadow';if(/joint|bone|knee|back/.test(t))return 'Bone Mountains';if(/cough|throat|breath|lung|airway|respir/.test(t))return 'Lung Valley';return 'Brain Garden'}
 export const careExplanations:Record<string,string>={
   English:'Dr. Maya recommends giving your body time to rest, keeping up with fluids, and noticing how you feel over time. If things get worse or are not improving, check in with her.',
   Hindi:'डॉ. माया आराम करने, पर्याप्त तरल पदार्थ लेने और समय के साथ अपने स्वास्थ्य पर ध्यान देने की सलाह देती हैं। लक्षण बिगड़ें या सुधार न हो, तो उनसे संपर्क करें।',

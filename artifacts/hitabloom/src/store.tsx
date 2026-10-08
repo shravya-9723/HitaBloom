@@ -195,7 +195,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
 
   const update: DemoContextValue['update'] = (patch) => updatePatient(store.activePatientId, patch);
   const selectPatient: DemoContextValue['selectPatient'] = (id) => {
-    if (store.session?.role === 'doctor' && store.patients.some((item) => item.id === id)) {
+    if (store.session?.role === 'doctor' && store.activePatientId !== id && store.patients.some((item) => item.id === id)) {
       setStore((current) => ({ ...current, activePatientId: id }));
     }
   };
