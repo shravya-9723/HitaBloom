@@ -2,7 +2,7 @@
 
 > **"Transforming clinical care into a whimsical garden of curiosity, gentle recovery, and cross-cultural understanding."**
 
-Built and designed by **Shravan** 🚀
+Built and designed by **Shravya** 🚀
 
 ---
 
@@ -284,4 +284,4 @@ Click any patient profile on `/login` to log in instantly:
 
 ---
 
-*Designed and crafted with care by **Shravan**.* 🌸✨
+*Designed and crafted with care by **Shravya**.* 🌸✨
