@@ -5,6 +5,9 @@
 Built and designed by **Shravya** 🚀
 
 ---
+🌐 **Live Demo:** [HitaBloom — Gamified Healthcare Through Cultural Empathy](https://hitabloom-ai-n9f1.vercel.app/)
+
+---
 
 ## 📖 Table of Contents
 - [About Me & Why I Built HitaBloom](#-about-me--why-i-built-hitabloom)
