@@ -81,42 +81,73 @@ export function Header() {
   </header>;
 }
 
-export function PatientAvatar({ style, label = 'Patient', small = false }: { style: AvatarStyle; label?: string; small?: boolean }) {
-  return <span className={`patient-avatar ${small ? 'patient-avatar-small' : ''} expression-${style.expression}`} role="img" aria-label={`${label}'s personalized avatar`} data-testid={`img-avatar-${label.toLowerCase().replaceAll(' ', '-')}`}>
-    <i className={`avatar-hair hair-${style.hair}`} style={{ background: style.hairColor, color: style.hairColor }}/>
-    <i className={`avatar-face face-${style.face}`} style={{ background: style.skin }}>
-      {style.accessory !== 'none' && <i className={`avatar-accessory accessory-${style.accessory}`}/>}
-      <i className="avatar-eye left"/><i className="avatar-eye right"/>
-      {style.glasses && <i className="avatar-glasses"/>}
-      <i className={`avatar-mouth mouth-${style.expression}`}/>
-    </i>
-    <i className={`avatar-body outfit-${style.outfit}`}/>
-  </span>;
+import { BitmojiAvatar, BitmojiAvatarSvg } from './components/BitmojiAvatar';
+export { BitmojiAvatar, BitmojiAvatarSvg };
+
+export function PatientAvatar({
+  style,
+  label = 'Patient',
+  small = false,
+  full = false,
+  size,
+  className = '',
+}: {
+  style?: AvatarStyle;
+  label?: string;
+  small?: boolean;
+  full?: boolean;
+  size?: 'xs' | 'small' | 'medium' | 'large' | 'preview';
+  className?: string;
+}) {
+  const resolvedSize = size ?? (small ? 'small' : full ? 'preview' : 'medium');
+  return (
+    <BitmojiAvatar
+      style={style}
+      label={label}
+      size={resolvedSize}
+      className={className}
+    />
+  );
 }
 
-export function DoctorAvatar({ small = false }: { small?: boolean }) {
-  return <span className={`doctor-avatar ${small ? 'doctor-avatar-small' : ''}`} role="img" aria-label="Illustration of Dr. Maya">
-    <i className="doctor-hair"/><i className="doctor-face"><b/><b/><em/></i><i className="doctor-coat"><span className="doctor-stethoscope"/></i>
-  </span>;
-}
+export function DoctorAvatar({
+  small = false,
+  large = false,
+  size,
+  className = '',
+}: {
+  small?: boolean;
+  large?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  className?: string;
+}) {
+  const resolvedSize = size ?? (small ? 'small' : large ? 'large' : 'medium');
+  const sizeClasses: Record<string, string> = {
+    small: 'w-7 h-7 min-w-[28px] min-h-[28px] max-w-[28px] max-h-[28px]',
+    medium: 'w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px]',
+    large: 'w-16 h-16 min-w-[64px] min-h-[64px] max-w-[64px] max-h-[64px]',
+  };
+  const dim = sizeClasses[resolvedSize] || sizeClasses.medium;
 
-const characterArt: Record<string, string> = {
-  Luma: 'air', Bri: 'mind', Cora: 'heart', Bony: 'bone', Milo: 'muscle',
-  Moss: 'garden', Poppy: 'garden', Mango: 'garden',
-};
-export function Character({ label = 'Luma', large = false }: { label?: string; large?: boolean }) {
-  const art = characterArt[label] ?? 'garden';
-  return <div className={`hb-guide hb-guide-${art} ${large ? 'hb-guide-large' : ''}`} role="img" aria-label={`${label}, a friendly illustrated health guide`} data-testid={`character-${label.toLowerCase()}`}>
-    <span className="hb-guide-sprout"/><span className="hb-guide-body">
-      <i className="hb-guide-eye left"/><i className="hb-guide-eye right"/>
-      <i className="hb-guide-cheek left"/><i className="hb-guide-cheek right"/>
-      <i className="hb-guide-mouth"/>
+  return (
+    <span
+      className={`doctor-avatar inline-flex items-center justify-center flex-shrink-0 rounded-full overflow-hidden relative shadow-sm border border-sky-300/60 bg-gradient-to-b from-blue-100 to-indigo-100 ${dim} ${className}`}
+      role="img"
+      aria-label="Illustration of Dr. Maya"
+      data-testid="img-avatar-dr.-maya"
+    >
+      <img
+        src="/assets/characters/dr-maya.png"
+        alt="Dr. Maya"
+        className="w-full h-full object-cover object-top"
+      />
     </span>
-    <span className="hb-guide-arm left"/><span className="hb-guide-arm right"/>
-    <span className="hb-guide-foot left"/><span className="hb-guide-foot right"/>
-    <span className="hb-guide-name">{label}</span>
-  </div>;
+  );
 }
+
+import { Character, CHARACTER_REGISTRY, resolveCharacterMeta } from './components/Character';
+export { Character, CHARACTER_REGISTRY, resolveCharacterMeta };
+export type { CharacterProps, CharacterMeta, CharacterId } from './components/Character';
 
 export function PageHeading({ eyebrow, title, subtitle, action }: { eyebrow: string; title: ReactNode; subtitle?: ReactNode; action?: ReactNode }) {
   return <div className="hb-page-heading">

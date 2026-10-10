@@ -26,11 +26,8 @@
 }
 
 .patient-avatar {
-  width: 70px;
-  height: 94px;
   position: relative;
   flex: 0 0 auto;
-  animation: avatar-bob 4s ease-in-out infinite;
 }
 
 .avatar-face {

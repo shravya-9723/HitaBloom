@@ -10,6 +10,8 @@ export type DemoMessage = {
   body: string;
   createdAt: string;
   kind: 'message' | 'quest' | 'care' | 'recovery';
+  originalEn?: string;
+  language?: string;
 };
 type PersistedStore = {
   patients: DemoState[];
@@ -30,7 +32,7 @@ export type DemoContextValue = {
   update: (patch: Partial<DemoState>) => void;
   updatePatient: (id: string, patch: Partial<DemoState>) => void;
   selectPatient: (id: string) => void;
-  sendMessage: (patientId: string, body: string, from: DemoRole, kind?: DemoMessage['kind']) => void;
+  sendMessage: (patientId: string, body: string, from: DemoRole, kind?: DemoMessage['kind'], originalEn?: string, language?: string) => void;
   reset: () => void;
 };
 
@@ -49,6 +51,7 @@ function patient(overrides: Partial<DemoState> & Pick<DemoState, 'id' | 'name' |
     analyzed: false,
     learningArea: '',
     followup: '',
+    characterChats: overrides.characterChats ?? {},
     questStatus: 'none',
     questTitle: '',
     questMinutes: '10',
@@ -199,7 +202,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
       setStore((current) => ({ ...current, activePatientId: id }));
     }
   };
-  const sendMessage: DemoContextValue['sendMessage'] = (patientId, body, from, kind = 'message') => {
+  const sendMessage: DemoContextValue['sendMessage'] = (patientId, body, from, kind = 'message', originalEn, language) => {
     const patientRecord = store.patients.find((item) => item.id === patientId);
     if (!patientRecord || !body.trim()) return;
     const message: DemoMessage = {
@@ -209,6 +212,8 @@ export function DemoProvider({ children }: { children: ReactNode }) {
       body: body.trim(),
       createdAt: new Date().toISOString(),
       kind,
+      originalEn: originalEn?.trim() || body.trim(),
+      language: language || patientRecord.language || 'English',
     };
     setStore((current) => ({
       ...current,
